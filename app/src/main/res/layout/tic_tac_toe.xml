@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/GameName"
+            app:layout_constraintStart_toStartOf="@id/box2"
+            app:layout_constraintBottom_toTopOf="@id/box2"
+            android:text="Tic Tac Toe"
+            android:textSize="36dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="-50dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerid"
+            app:layout_constraintStart_toStartOf="@id/GameName"
+            app:layout_constraintBottom_toTopOf="@id/box2"
+            android:text="Click to start!"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/result"
+            app:layout_constraintStart_toStartOf="@id/box8"
+            app:layout_constraintTop_toBottomOf="@id/box8"
+            android:text="Result"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/xCount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result"
+            android:text="X Wins: 0"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/yCount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result"
+            android:text="O Wins: 0"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/resetBtn"
+            app:layout_constraintStart_toEndOf="@+id/xCount"
+            app:layout_constraintTop_toBottomOf="@+id/xCount"
+            android:layout_marginTop="20dp"
+            android:text="Reset!" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BackBtn"
+            app:layout_constraintStart_toEndOf="@+id/resetBtn"
+            app:layout_constraintTop_toTopOf="@+id/resetBtn"
+            android:layout_marginLeft="10dp"
+            android:text="Back!" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box1"
+            app:layout_constraintEnd_toStartOf="@+id/box2"
+            app:layout_constraintTop_toTopOf="@id/box2"
+            android:background="@drawable/tttborder"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:id="@+id/box1Child"
+                android:textSize="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox1"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box2"
+            app:layout_constraintBottom_toTopOf="@id/box5"
+            app:layout_constraintStart_toStartOf="@id/box5"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:id="@+id/box2Child"
+                android:textSize="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox2"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box3"
+            app:layout_constraintStart_toEndOf="@id/box5"
+            app:layout_constraintBottom_toTopOf="@id/box5"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="50dp"
+                android:id="@+id/box3Child"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox3"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box4"
+            app:layout_constraintStart_toStartOf="@id/box1"
+            app:layout_constraintTop_toBottomOf="@id/box1"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="50dp"
+                android:id="@+id/box4Child"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox4"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:id="@+id/box5Child"
+                android:textSize="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox5"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box6"
+            app:layout_constraintStart_toStartOf="@id/box3"
+            app:layout_constraintTop_toBottomOf="@id/box3"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="50dp"
+                android:id="@+id/box6Child"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox6"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box7"
+            app:layout_constraintTop_toBottomOf="@id/box4"
+            app:layout_constraintStart_toStartOf="@id/box4"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="50dp"
+                android:id="@+id/box7Child"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox7"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box8"
+            app:layout_constraintStart_toStartOf="@id/box5"
+            app:layout_constraintTop_toBottomOf="@id/box5"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:textSize="50dp"
+                android:id="@+id/box8Child"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox8"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/box9"
+            app:layout_constraintStart_toStartOf="@id/box6"
+            app:layout_constraintTop_toBottomOf="@id/box6"
+            android:background="@drawable/tttborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:id="@+id/box9Child"
+                android:textSize="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linebox9"
+                android:background="@drawable/ic_baseline_line_24"
+                android:visibility="invisible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
